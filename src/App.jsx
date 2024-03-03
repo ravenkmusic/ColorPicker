@@ -4,11 +4,12 @@ import { useState } from "react";
 const App = () => {
   const [selectedColor, setSelectedColor] = useState("");
 
-  const Color = ({color, setSelectedColor}) => {
+  const Color = ({ color, setSelectedColor }) => {
     return (
-    <div className={color} 
+    <div className= {color} 
     onClick={() => setSelectedColor (color)}
-    ></div>)
+    ></div>
+    )
   }
 
   return (
