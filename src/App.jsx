@@ -3,21 +3,24 @@ import { useState } from "react";
 
 const App = () => {
   const [selectedColor, setSelectedColor] = useState("");
-  
-  const Color = (props) => {
-    return <div className={props.color}></div>
+
+  const Color = ({color, setSelectedColor}) => {
+    return (
+    <div className={color} 
+    onClick={() => setSelectedColor (color)}
+    ></div>)
   }
 
   return (
     <div id="container">
       <div id="navbar">
         <div>Currently selected: </div>
-        <div className="red">red</div>
+        <div className={selectedColor}>{setSelectedColor}</div>
       </div>
       <div id="colors-list">
-        <Color color= "black" />
-        <Color color= "violet" />
-        <Color color= "red" />
+        <Color color= "black" setSelectedColor = {selectedColor} />
+        <Color color= "violet" setSelectedColor = {selectedColor} />
+        <Color color= "red" setSelectedColor = {selectedColor} />
       </div>
     </div>
   );
